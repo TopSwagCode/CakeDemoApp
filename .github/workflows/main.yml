@@ -19,11 +19,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Testing
+      run: |
+        ls
     - name: Run the Cake script
       uses: cake-build/cake-action@v1
-      run: |
-        ls \
-        pwd \
       with:
         verbosity: Diagnostic
         script-path: ../src/build.cake
