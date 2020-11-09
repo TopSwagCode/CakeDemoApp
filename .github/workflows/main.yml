@@ -21,6 +21,9 @@ jobs:
     steps:
     - name: Run the Cake script
       uses: cake-build/cake-action@v1
+      run: |
+        ls \
+        pwd \
       with:
         verbosity: Diagnostic
         script-path: ../src/build.cake
