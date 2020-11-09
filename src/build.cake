@@ -9,14 +9,14 @@ Task("Clean")
     .WithCriteria(c => HasArgument("rebuild"))
     .Does(() =>
 {
-    CleanDirectory($"./bin/{configuration}");
+    CleanDirectory($".CakeDemoApp/bin/{configuration}");
 });
 
 Task("Build")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    DotNetCoreBuild("", new DotNetCoreBuildSettings
+    DotNetCoreBuild("CakeDemoApp.sln", new DotNetCoreBuildSettings
     {
         Configuration = configuration,
     });
@@ -26,7 +26,7 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    DotNetCoreTest("", new DotNetCoreTestSettings
+    DotNetCoreTest("CakeDemoApp.sln", new DotNetCoreTestSettings
     {
         Configuration = configuration,
         NoBuild = true,
