@@ -24,4 +24,3 @@ jobs:
       with:
         verbosity: Diagnostic
         script-path: ../src/build.cake
-
